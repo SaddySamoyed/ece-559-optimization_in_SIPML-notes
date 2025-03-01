@@ -126,8 +126,79 @@ $$
 
 
 
+\section{optimal condtions}
+\subsection{optimal conditions for unconstrained problems}
+\begin{theorem}{general optimal conditions for unconstraint problems}
+
+    if $f $ is $C^1$, then a necessary condition for $f(x_*)$ being a local minimizer is $$\nabla f(x_*) = 0$$.
+     if $f $ is $C^2$, then a necessary condition for $f(x_*)$ being a local minimizer is 
+     $$
+     \nabla f(x_*) = 0, \nabla ^2f(x_*) \succeq 0
+     $$
+
+     If $f$ is $C^2$, then a \textbf{sufficient condition} for $f(x_*)$ being a local minimizer is 
+     $$
+     \nabla f(x_*) = 0, \nabla ^2f(x_*) \succ 0
+     $$
+     
+\end{theorem}
 
 
+\begin{theorem}{global optimality of \textbf{convex functions} for unconstraint problems}
+    if $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is convex, then a local minimizer is a global minimizer; also, if $f$ is strictly convex, then the global minimizer is unique.\\
+    Also, $x_*$is a global minimizer \textbf{iff} $$
+    0 \in \partial f(x_*)
+    $$
+. Also, if $f$ is $C^1$, then $\nabla f(x_*) = 0 \implies$ $x_*$ is a global minimizer.
+    
+\end{theorem}
+
+
+
+
+\subsection{optimal conditions for constrained problems}
+
+\begin{definition}{constrained problem}
+    \[
+    \min_x f(x) ,
+    \]
+    \[s.t. r_i(x) =0, h_j  \leq 0\]
+    $\forall 1 \leq i \leq p,1\leq j \leq q$.
+
+\end{definition}
+
+
+
+
+
+\section{rate of convergence}
+
+After designing (a few) optimization algorithms, we need to know which one has the optimal complexity. And a critical part of complexity is the \textbf{rate of convergence.}
+
+Solving an optimization problem via iteration methods produce a sequence of points
+$$
+x_0, x_1, x_2, \cdots
+$$
+starting from initial point $x_0$.
+
+
+Usually we cannot obtain an optimal sol (e.g. gradient descent), and we can define some precision value $\epsilon$.
+
+$$
+complexity  = \text{cost per iteration} \times \#iterations
+$$
+
+The convergence rate 可以被 measured by:
+\begin{enumerate}
+    \item distance to a minimizer: (通常其实不知道)$$|| x_k - x_* || \leq \epsilon$$
+    \item sub-optimality in objective function: $$||f( x_k) -f (x_*) || \leq \epsilon$$
+    \item gradient: $$ || \nabla f(x_k)     || \leq \epsilon$$
+\end{enumerate}
+
+\begin{definition}{rate of convergence}
+We say the $Q$-convergence is of order $p (\geq 1)$ and with factor $\gamma$, if 
+    
+\end{definition}
 
 
 
